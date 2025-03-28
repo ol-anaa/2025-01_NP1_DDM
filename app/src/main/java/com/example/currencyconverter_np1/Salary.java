@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.widget.Toolbar;
@@ -89,30 +90,39 @@ public class Salary extends AppCompatActivity {
         String salary = Salary.getText().toString().trim();
         String percentage = Percentage.getText().toString().trim();
 
+        boolean error = false;
+
         if(salary.isBlank()){
             Salary.setError("Você precisa digitar um valor válido para o salário");
-            return false;
+            error = true;
         }
+        else{
+            double doubleValue = Double.parseDouble(salary);
 
-        double doubleValue = Double.parseDouble(salary);
-
-        if (doubleValue <= 0) {
-            Salary.setError("Você precisa digitar um valor válido para o salário");
-            return false;
+            if (doubleValue <= 0) {
+                Salary.setError("Você precisa digitar um valor válido para o salário");
+                error = true;
+            }
         }
 
         if(percentage.isBlank()){
             Percentage.setError("Você precisa digitar um percentual válido para aumento salárial");
-            return false;
+            error = true;
+        }
+        else{
+            int percentageValue = Integer.parseInt(percentage);
+
+            if (percentageValue <= 0) {
+                Percentage.setError("Você precisa digitar um percentual válido para aumento salárial");
+                error = true;
+            }
         }
 
-        int percentageValue = Integer.parseInt(percentage);
-
-        if (percentageValue <= 0) {
-            Percentage.setError("Você precisa digitar um percentual válido para aumento salárial");
-            return false;
+        if(!error){
+            Toast.makeText(this, "Formulário enviado com sucesso!", Toast.LENGTH_SHORT).show();
+            return true;
         }
-
-        return true;
+        else
+            return false;
     }
 }
