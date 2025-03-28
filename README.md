@@ -3,7 +3,7 @@
 Trabalho de DDM, Matemática aplicada e Interface humano computador  - UNIP
 
 <hr/>
-<h3>Autor:</h3>
+<h3>Autora:</h3>
 
 <table>
   <tr>
