@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainSalary"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/pearl"
+    tools:context=".Salary">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/lightBrown"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/pearl"
+        tools:context=".Salary_main"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculo de aumento salarial"
+            android:fontFamily=""
+            android:textSize="25sp"
+            android:textColor="@color/lightBrown"
+            android:textStyle="bold"
+            android:id="@+id/title"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:background="@color/pearl"
+            tools:context=".Salary"
+            android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sálario em reias"
+            android:id="@+id/labelSalary"
+            android:textColor="@color/black"
+            android:layout_marginBottom="5dp"
+            />
+
+        <EditText
+            android:id="@+id/Salary"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/edittext_border"
+            android:hint="R$ 0.000,00"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray"
+            android:textCursorDrawable="@color/lightBrown"
+            android:textSize="15dp"
+            android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Porcentagem de aumento"
+                android:id="@+id/labelPercentage"
+                android:textColor="@color/black"
+                android:layout_marginBottom="5dp"
+                />
+
+            <EditText
+                android:id="@+id/percentage"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/edittext_border"
+                android:hint="10%"
+                android:inputType="number"
+                android:padding="8dp"
+                android:textColor="@color/gray"
+                android:textColorHint="@color/gray"
+                android:textCursorDrawable="@color/lightBrown"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_background"
+            android:text="Calcular"
+            android:textColor="#FFFFFF"
+            android:id="@+id/btn"
+            android:textSize="15dp"
+            android:layout_marginBottom="20dp"/>
+
+        <LinearLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:background="@color/pearl"
+            tools:context=".Salary"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resultado"
+                android:id="@+id/labelResultSalary"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                />
+
+            <EditText
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="0"
+                android:inputType="none"
+                android:textColor="@color/lightBrown"
+                android:textColorHint="@color/gray"
+                android:textSize="20dp"
+                android:visibility="gone"
+                android:enabled="false"
+                android:background="@null"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

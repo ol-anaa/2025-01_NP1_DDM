@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">currencyConverter_np1</string>
+
+    <string-array name="coins">
+        <item>BRL - Real Brasileiro</item>
+        <item>USD - Dólar dos Estados Unidos</item>
+        <item>AUD - Dólar australiano</item>
+        <item>EUR - Euro</item>
+        <item>GBP - Libra Esterlina</item>
+        <item>JPY - Iene japonês</item>
+    </string-array>
+
+</resources>
+
+
