@@ -229,7 +229,7 @@ public class CurrencyConverter extends AppCompatActivity {
         ValueResult.setText(r);
 
         String priceFormat = String.format("%.2f", price);
-        String realQuote = getCurrencySymbol(CountryEntry) + "1.00" + " = " + getCurrencySymbol(CountryExit) + priceFormat;
+        String realQuote = getCurrencySymbol(CountryExit) + priceFormat + " = " + getCurrencySymbol(CountryEntry) + "1.00";
         RealQuote.setText(realQuote);
     }
 
@@ -252,7 +252,7 @@ public class CurrencyConverter extends AppCompatActivity {
 
         String priceFormat = String.format("%.2f", price);
 
-        String realQuote = getCurrencySymbol(CountryEntry) + "1.00" + " = " + getCurrencySymbol(CountryExit) + priceFormat;
+        String realQuote = getCurrencySymbol(CountryExit) + priceFormat  + " = " + getCurrencySymbol(CountryEntry) + "1.00";
         RealQuote.setText(realQuote);
     }
 
@@ -276,7 +276,7 @@ public class CurrencyConverter extends AppCompatActivity {
 
         String priceFormat = String.format("%.2f", crossConversion);
 
-        String realQuote = getCurrencySymbol(CountryEntry) + "1.00" + " = " + getCurrencySymbol(CountryExit) + priceFormat;
+        String realQuote = getCurrencySymbol(CountryExit) + priceFormat + " = " + getCurrencySymbol(CountryEntry) + "1.00";
         RealQuote.setText(realQuote);
     }
 
