@@ -1,12 +1,14 @@
 package com.example.currencyconverter_np1;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -106,13 +108,19 @@ public class CurrencyConverter extends AppCompatActivity {
                 if(!isValid)
                     return;
 
+                InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                if(im != null){
+                    im.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
+
                 Timer timer = new Timer();
                 timer.schedule(new TimerTask() {
                     @Override
                     public void run() {
                         runOnUiThread(() -> showRatingDialog());
                     }
-                }, 15000);
+                }, 1000);
 
                 // Case 1: Converter de BRL para outra moeda
                 if (CountryEntry.equals("BRL")) {

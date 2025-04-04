@@ -1,9 +1,11 @@
 package com.example.currencyconverter_np1;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -59,6 +61,12 @@ public class Salary extends AppCompatActivity {
 
                 if(!isValid)
                     return;
+
+                InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+
+                if(im != null){
+                    im.hideSoftInputFromWindow(v.getWindowToken(), 0);
+                }
 
                 String valueSalary = Salary.getText().toString();
                 double salary = Double.parseDouble(valueSalary);
